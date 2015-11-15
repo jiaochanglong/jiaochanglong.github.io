@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
+title: long long ago
+subtitle: 前端>焦昌龙
 description:
 author: jiaochanglong
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -63,7 +63,24 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: next
+
+# 多说评论
+duoshuo_shortname: jiaochanglong
+
+# 分享
+baidushare: true
+
+# 用户头像
+avatar: user.png
+
+# 社交网站
+social:
+  github: https://github.com/jiaochanglong
+
+
+# 百度统计
+baidu_analytics: ac76b80b6a67c52a8def8a156ded900a
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
