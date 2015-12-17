@@ -189,15 +189,6 @@
 
     
     
-      
-      
-        
-        
-        
-      
-
-      
-    
 
     
       
@@ -221,7 +212,205 @@
             
               
                 
-                <a class="post-title-link" href="/2015/11/24/前端资源大全/" itemprop="url">
+                <a class="post-title-link" href="/2015/12/17/ECMAScript62/" itemprop="url">
+                  ECMAScript62
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-17T16:35:09+08:00" content="2015-12-17">
+              2015-12-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/17/ECMAScript62/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/17/ECMAScript62/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/12/17/ECMAScript61/" itemprop="url">
+                  ECMAScript新特性（一）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-17T11:07:15+08:00" content="2015-12-17">
+              2015-12-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ECMAScript-6/" itemprop="url" rel="index">
+                    <span itemprop="name">ECMAScript 6</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/17/ECMAScript61/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/17/ECMAScript61/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>最近正在调研<a href="https://angular.io/">Angular2.0</a>，发现官网给出的dome竟然有三种语言版本的，Angular 2 for TypeScript、Angular 2 for JavaScript 、Angular 2 for Dart 。简单看下原因好像因该是：</p>
+<blockquote>
+<p>Dart是Google开发的另一种语言，它有自己的运行时和基础类库，挺强大，但是它的API和正常的JavaScript代码不兼容，想要抹平这种差异需要再做一层封装，无疑这会是性能大打折扣。对于Angular来说，这性能损耗是不可接受的，所有就有了Angular Dart版本，Angular1.X google团队一直在维持这两个版本的Angular，Angular2.0把Angular和Angular Dart统一起来，这样团队就不用维护两套系统了。<br>看一下Angular 2 for TypeScript 的dome代码，发现ECMAScript 6 新特性是在是太方便了，所以打算先系统学习下ECMAScript 6的新特性，在这里做一下记录总结。</p>
+</blockquote>
+<h2 id="let和const命令:">let和const命令:</h2><ul>
+<li><h3 id="let命令">let命令</h3>let命令用来声明变量,但是所声明的变量，只在let命令所在的代码块内有效，<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">let</span> b = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">a <span class="comment">// 1</span></span><br><span class="line">b <span class="comment">// not defined</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>let其实形成了块级作用于，它还不存在变量提升、不允许重发声明、不允许重复声明<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">&#123;</span><br><span class="line">	a <span class="comment">// 1</span></span><br><span class="line">	c <span class="comment">// 3 变量提升</span></span><br><span class="line">	<span class="keyword">var</span> c = <span class="number">3</span>;</span><br><span class="line">	d <span class="comment">// not defined let不存在变量提升</span></span><br><span class="line">	<span class="keyword">let</span> d</span><br><span class="line">	<span class="keyword">let</span> d <span class="comment">//error let不允许重复声明</span></span><br><span class="line">	b <span class="comment">// not defined 因为这个块级作用域用let声明了变量b，let又不存在变量提升</span></span><br><span class="line">	<span class="keyword">let</span> b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/12/17/ECMAScript61/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2015/11/24/qianduandaquan/" itemprop="url">
                   前端资源大全
                 </a>
               
@@ -258,8 +447,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/11/24/前端资源大全/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/24/前端资源大全/" itemprop="commentsCount"></span>
+                <a href="/2015/11/24/qianduandaquan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/24/qianduandaquan/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -307,7 +496,7 @@
 </li>
 </ol>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/24/前端资源大全/#more" rel="contents">
+            <a class="btn" href="/2015/11/24/qianduandaquan/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -371,21 +560,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
